@@ -1,11 +1,10 @@
 import os  # library
 from argparse import ArgumentParser
 
-char = int(input("please inter number for change object"))
-
 parser = ArgumentParser()
 parser.add_argument("--labels_path", required=True, help="Path to labels' directory")
 args = parser.parse_args()
+char = len("--labels_path")
 
 labels_path = args.labels_path
 dir_list = os.listdir(labels_path)
