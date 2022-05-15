@@ -4,7 +4,7 @@ from argparse import ArgumentParser
 parser = ArgumentParser()
 parser.add_argument("--labels_path", required=True, help="Path to labels' directory")
 args = parser.parse_args()
-char = len("--labels_path")
+
 
 labels_path = args.labels_path
 dir_list = os.listdir(labels_path)
@@ -21,7 +21,7 @@ for file_name in dir_list:
 
     with open(txt_path, mode="r") as f:
         first_line = f.read()
-
+        char = len(first_line)
     modified_label = first_line.replace('-1', '0', char)
     with open(txt_path, mode="w") as f:
         f.write(modified_label)
